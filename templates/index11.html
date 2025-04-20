@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Forward Section</title>
+    <meta name="description" content="Free bootstrap template Atlas">
+    
+    <!-- custom.css -->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<!-- font-awesome -->
+    <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- AOS -->
+    <link rel="stylesheet" href="static/css/aos.css">
+</head>
+
+<body>
+    <!-- banner -->
+    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url(static/img/footballbg2.jpg);background-color: rgba(0, 0, 0, 0.7); background-blend-mode: multiply;">
+        <div class="container text-center text-md-left">
+            <header>
+                <div class="row justify-content-between">
+                    <div class="col-2">
+                        <!--<img src="img/logo.png" alt="logo">-->
+                    </div>
+                    <div class="col-6 align-self-center text-right">
+                        <a href="#" class="text-white lead">About us</a>
+                    </div>
+                </div>
+            </header>
+            <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="display-3 text-white font-weight-bold my-5">
+            	Next-Gen Performance
+            </h1>
+            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4">
+                Elevate your game to new heights with data-driven insights and 
+                <br>expert analysis on our revolutionary football performance website
+                
+            </p>
+            <a href="#contact22" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green">Get Started</a>
+        </div>
+    </div> 
+
+
+    <div class="container my-5 py-2" id="price-table">
+        <h2 class="text-center font-weight-bold d-block mb-3"> 
+            Exploring Possibilities of ML in Football Performance Analysis</h2>
+            <br>
+
+            <p>
+                Our product leverages machine learning to transform football analysis, offering deep insights into player performance,
+                tactical strategies, and team dynamics. With predictive modeling, real-time analysis, and injury prevention capabilities,
+                it optimizes strategies, enhances player development, and maximizes performance potential both on and off the field.
+            </p>
+
+    
+    
+        
+    </div>
+
+
+
+    <!-- three-blcok -->
+    <div class="container my-5 py-2" id="contact22">
+        <h3 class="text-center font-weight-bold my-5">Upload Your Dataset</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="upload-section">
+
+                <!-- Removed the broken comment block -->
+                <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="file" class="custom-file-upload">Select file</label>
+                    <input type="file" name="file" id="file" class="file-input" style="display: none;">
+                    <span id="file-name">No file chosen</span>
+                    <button type="submit" class="btn btn-success upload-btn">Upload</button>
+                </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- feature (skew background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
+        <div class="container my-5">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
+                    <h3 class="font-weight-bold">Precision meets performance.<br>Football analysis, redefined </h3>
+                    <p class="my-4">"Track every move, analyze every play, and unlock new strategies.<br>
+                        Harness the power of AI to elevate your team's performance to the next level."</p>
+                    <a href="#copyright" class="btn my-4 font-weight-bold atlas-cta cta-blue">Connect Us</a>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
+                    <img src="static/img/Wavy_Tech-15_Single-08.jpg" alt="Take a look inside" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- feature (green background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
+        <h2 class="text-center font-weight-bold my-5">Performance Analysis</h2>
+        <div class="container">
+            
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
+                    
+                    
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <!-- Center Back Analysis Section -->
+                            <div class="col-md-6">
+                                <div class="card analyze-card text-center">
+                                    <div class="card-body">
+                                        <h2 class="card-title" style = "font-size:25px !important;" >Centerbacks</h2><br>
+                                        <p class="card-text">Unlock the potential of your center backs with in-depth performance analysis.</p>
+                                        <a href="/cb" class="btn btn-primary cb-btn">View CB Analysis</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Goalkeeper Analysis Section -->
+                            <div class="col-md-6">
+                                <div class="card analyze-card text-center">
+                                    <div class="card-body">
+                                        <h2 class="card-title" style = "font-size:25px !important;">Goalkeepers</h2><br>
+                                        <p class="card-text">Enhance goalkeeper skills with advanced performance insights.</p>
+                                        <a href="/goalkeeper" class="btn btn-primary gk-btn">View GK Analysis</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
+                    
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <!-- Midfielder Analysis Section -->
+                            <div class="col-md-6">
+                                <div class="card analyze-card text-center">
+                                    <div class="card-body">
+                                        <h2 class="card-title" style = "font-size:25px !important;" >Midfielders</h2><br>
+                                        <p class="card-text">Gain insights into midfielder contributions and enhance team play.</p>
+                                        <a href="/midfielder" class="btn btn-primary mid-btn">View Midfielder Analysis</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Forward Analysis Section -->
+                            <div class="col-md-6">
+                                <div class="card analyze-card text-center">
+                                    <div class="card-body">
+                                        <h2 class="card-title" style = "font-size:25px !important;">Forwards</h2><br>
+                                        <p class="card-text">Analyze forward efficiency and goal-scoring capabilities.</p>
+                                        <a href="/forward" class="btn btn-primary forward-btn">View Forward Analysis</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- contact -->
+    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(static/img/contact-bk.jpg);">
+        <div class="container my-5">
+            <div class="row justify-content-between">
+                <div class="col-md-6 text-white">
+                    <h2 class="font-weight-bold">Next-Gen Performance</h2>
+                    <p class="my-4">
+                        Turning data into game-changing decisions.
+                        <br> Master the game with machine learning.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>Email : company_email@com</li>
+                        <li>Phone : 361-688-5824</li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+	<!-- copyright -->
+	<div class="jumbotron jumbotron-fluid" id="copyright">
+        <div class="container">
+            <div class="row justify-content-between">
+            	<div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
+                    Copyright © .
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AOS -->
+    <script src="static/js/aos.js"></script>
+    <script>
+      AOS.init({
+      });
+    </script>
+    <!-- JavaScript -->
+    <script>
+        let fileInput = document.getElementById('file');
+        let fileNameDisplay = document.getElementById('file-name');
+    
+        // Show file name when selected
+        fileInput.addEventListener('change', function () {
+            fileNameDisplay.textContent = this.files.length ? this.files[0].name : 'No file chosen';
+        });
+    
+        // Prevent form submission if no file is selected
+        document.getElementById('upload-form').addEventListener('submit', function (event) {
+            if (!fileInput.files.length) {
+                alert('Please select a file before uploading.');
+                event.preventDefault();
+            }
+        });
+    
+        // Open file picker when clicking the label
+        //document.querySelector('.custom-file-upload').addEventListener('click', function () {
+        //        fileInput.click();
+        //}); 
+    </script>
+</body>
+
+</html>

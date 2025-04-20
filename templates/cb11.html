@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Forward Section</title>
+    <meta name="description" content="Free bootstrap template Atlas">
+    
+    <!-- custom.css -->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<!-- font-awesome -->
+    <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="static/css/aos.css">
+</head>
+
+<body>
+
+
+
+    <!-- three-blcok -->
+    <div class="container my-5 py-2">
+        <h2 class="text-center font-weight-bold my-5">Centerback Matrix Analysis</h2>
+        <div class="row">
+            {% if message %}
+            <p class="alert alert-warning" >
+                {{ message }}
+            </p>
+            {% else %}
+            <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+                <img src="static/img/smart-protect-1.jpg" alt="Anti-spam" class="mx-auto">
+                <h4>KNN Train RMSE:</h4>
+                <p>{{ train_rmse_knn }}</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+                <img src="static/img/smart-protect-2.jpg" alt="Phishing Detect" class="mx-auto">
+                <h4>KNN Test RMSE</h4>
+                <p>{{ test_rmse_knn }}</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+                <img src="static/img/smart-protect-3.jpg" alt="Smart Scan" class="mx-auto">
+                <h4>Average Performance:</h4>
+                <p>1.988691038862088</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+        <!-- price table -->
+        <div class="container my-5 py-2" id="price-table">
+            <h2 class="text-center font-weight-bold d-block mb-3">Real Madrid Centerbacks </h2>
+            
+            <div class="row">
+                {% for index, player in selected_centerback.iterrows() %}
+                <div class="col-md-6">
+                    <div class="card bg-light mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title">{{ player['Known As'] }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>Performance:</strong> {{ player['cb performance'] }}</p>
+                            <p class="card-text"><strong>Position:</strong> {{ player['Positions Played'] }}</p>
+                            <p class="card-text"><strong>Category:</strong> {{ player['cb category'] }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+<!-- CB form -->
+<div class="container my-5 py-2" id="price-table">
+    <h2 class="text-center font-weight-bold d-block mb-3">Enter Centerback Data</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-gold">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <form action="/cb_pred" method="post"> 
+                        <div class="row">
+                            <!-- Left Section -->
+                            <div class="col-md-6">
+                                <div class="form-group light-blue">
+                                    <label for="player_name">Player's Name:</label>
+                                    <input type="text" class="form-control" id="player_name" name="player_name" required>
+                                </div>
+                                <div class="form-group green">
+                                    <label for="overall">Overall Rating:</label>
+                                    <input type="number" class="form-control" id="overall" name="overall" required>
+                                </div>
+                                <div class="form-group yellow">
+                                    <label for="heading_accuracy">Heading Accuracy:</label>
+                                    <input type="number" class="form-control" id="heading_accuracy" name="heading_accuracy" required>
+                                </div>
+                                <div class="form-group light-blue">
+                                    <label for="reactions">Reactions:</label>
+                                    <input type="number" class="form-control" id="reactions" name="reactions" required>
+                                </div>
+                                <div class="form-group green">
+                                    <label for="strength">Strength:</label>
+                                    <input type="number" class="form-control" id="strength" name="strength" required>
+                                </div>
+                                <div class="form-group light-blue">
+                                    <label for="club_name">club name:</label>
+                                    <input type="text" class="form-control" id="club_name" name="club_name" required>
+                                </div>
+                            </div>
+
+                    
+                            <!-- Right Section -->
+                            <div class="col-md-6">
+                                <div class="form-group yellow">
+                                    <label for="aggression">Aggression:</label>
+                                    <input type="number" class="form-control" id="aggression" name="aggression" required>
+                                </div>
+                                <div class="form-group light-blue">
+                                    <label for="interceptions">Interceptions:</label>
+                                    <input type="number" class="form-control" id="interceptions" name="interceptions" required>
+                                </div>
+                                <div class="form-group green">
+                                    <label for="composure">Composure:</label>
+                                    <input type="number" class="form-control" id="composure" name="composure" required>
+                                </div>
+                                <div class="form-group yellow">
+                                    <label for="marking">Marking:</label>
+                                    <input type="number" class="form-control" id="marking" name="marking" required>
+                                </div>
+                                <div class="form-group light-blue">
+                                    <label for="standing_tackle">Standing Tackle:</label>
+                                    <input type="number" class="form-control" id="standing_tackle" name="standing_tackle" required>
+                                </div>
+                                <div class="form-group green">
+                                    <label for="sliding_tackle">Sliding Tackle:</label>
+                                    <input type="number" class="form-control" id="sliding_tackle" name="sliding_tackle" required>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
+                        <!-- Submit Button -->
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                    
+
+                    <!-- Display Results -->
+                    {% if predicted_cb_performance %}
+                    <div class="mt-4">
+                        <h2>Predicted CB Performance</h2>
+                        <p>{{ predicted_cb_performance }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- feature (skew background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
+        <div class="container my-5">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
+                    <h3 class="font-weight-bold">Precision meets performance.<br>Football analysis, redefined </h3>
+                    <p class="my-4">"Track every move, analyze every play, and unlock new strategies.<br>
+                        Harness the power of AI to elevate your team's performance to the next level."</p>
+                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
+                    <<img src="data:image/png;base64,{{ plot_url }}" alt="CB Analysis Plot" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- feature (green background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
+        <div class="container">
+            <h2 class="mt-4 mb-3 text-center">Real Madrid CF Centerbacks</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Known As</th>
+                        <th>Full Name</th>
+                        <th>Overall</th>
+                        <th>Potential</th>
+                        <th>Value (in Euro)</th>
+                        <th>Positions Played</th>
+                        <th>Best Position</th>
+                        <th>Nationality</th>
+                        <th>Age</th>
+                        <th>Category</th>
+                        <!-- Add more headers as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, row in real_centerback_sorted.iterrows() %}
+                    <tr>
+                        <td>{{ row['Known As'] }}</td>
+                        <td>{{ row['Full Name'] }}</td>
+                        <td>{{ row['Overall'] }}</td>
+                        <td>{{ row['Potential'] }}</td>
+                        <td>{{ row['Value(in Euro)'] }}</td>
+                        <td>{{ row['Positions Played'] }}</td>
+                        <td>{{ row['Best Position'] }}</td>
+                        <td>{{ row['Nationality'] }}</td>
+                        <td>{{ row['Age'] }}</td>
+                        <td>{{ row['cb category']}}
+                        <!-- Add more columns as needed -->
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+    
+        <!-- contact -->
+    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(static/img/contact-bk.jpg);">
+        <div class="container my-5">
+            <div class="row justify-content-between">
+                <div class="col-md-6 text-white">
+                    <h2 class="font-weight-bold">Next-Gen Performance</h2>
+                    <p class="my-4">
+                        Turning data into game-changing decisions.
+                        <br> Master the game with machine learning.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>Email : company_email@com</li>
+                        <li>Phone : 361-688-5824</li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+	<!-- copyright -->
+	<div class="jumbotron jumbotron-fluid" id="copyright">
+        <div class="container">
+            <div class="row justify-content-between">
+            	<div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
+                    Copyright © .
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AOS -->
+    <script src="static/js/aos.js"></script>
+    <script>
+      AOS.init({
+      });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Forward Section</title>
+    <meta name="description" content="Free bootstrap template Atlas">
+    
+    <!-- custom.css -->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<!-- font-awesome -->
+    <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="static/css/aos.css">
+</head>
+
+<body>
+
+
+
+    <!-- three-blcok -->
+    <div class="container my-5 py-2">
+        <h2 class="text-center font-weight-bold my-5">Goalkeeper Matrix Analysis</h2>
+        <div class="row">
+            {% if message %}
+            <p class="alert alert-warning" >
+                {{ message }}
+            </p>
+            {% else %}
+            <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+                <img src="static/img/smart-protect-1.jpg" alt="Anti-spam" class="mx-auto">
+                <h4>Mean Squared Error: </h4>
+                <p>0.4952410324146 </p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+                <img src="static/img/smart-protect-2.jpg" alt="Phishing Detect" class="mx-auto">
+                <h4>Max Performance:</h4>
+                <p>{{ gk_per_max }}</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+                <img src="static/img/smart-protect-3.jpg" alt="Smart Scan" class="mx-auto">
+                <h4>Min Performance:</h4>
+                <p>{{ gk_per_min }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div class="container my-5 py-2" id="price-table">
+        <h2 class="text-center font-weight-bold d-block mb-3">Enter GK Data</h2>
+        <!-- Input Player Data Form -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-gold">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body">
+                        <form action="/gk_predict" method="post">
+                            <div class="row">
+                                <!-- Left Section -->
+                                <div class="col-md-6">
+                                    <div class="form-group light-blue">
+                                        <label for="player_name">Player's Name:</label>
+                                        <input type="text" class="form-control" id="player_name" name="player_name" required>
+                                    </div>
+                                    <div class="form-group green">
+                                        <label for="overall">Overall Rating:</label>
+                                        <input type="number" class="form-control" id="overall" name="overall" required>
+                                    </div>
+                                    <div class="form-group yellow">
+                                        <label for="potential">Potential Rating:</label>
+                                        <input type="number" class="form-control" id="potential" name="potential" required>
+                                    </div>
+                                    <div class="form-group light-blue">
+                                        <label for="gk-rating">GK Rating:</label>
+                                        <input type="number" class="form-control" id="gk_rating" name="gk_rating" required>
+                                    </div>
+                                    <div class="form-group green">
+                                        <label for="gk-diving">GK Diving Rating:</label>
+                                        <input type="number" class="form-control" id="gk_diving" name="gk_diving" required>
+                                    </div>
+                                    <div class="form-group green">
+                                        <label for="club_name">Club Name:</label>
+                                        <input type="text" class="form-control" id="club_name" name="club_name" required>
+                                    </div>
+                                </div>
+    
+                                <!-- Right Section -->
+                                <div class="col-md-6">
+                                    <div class="form-group yellow">
+                                        <label for="gk-handling">GK Handling Rating:</label>
+                                        <input type="number" class="form-control" id="gk_handling" name="gk_handling" required>
+                                    </div>
+                                    <div class="form-group light-blue">
+                                        <label for="gk-kicking">GK Kicking Rating:</label>
+                                        <input type="number" class="form-control" id="gk_kicking" name="gk_kicking" required>
+                                    </div>
+                                    <div class="form-group green">
+                                        <label for="gk-positioning">GK Positioning Rating:</label>
+                                        <input type="number" class="form-control" id="gk_positioning" name="gk_positioning" required>
+                                    </div>
+                                    <div class="form-group yellow">
+                                        <label for="gk-reflexes">GK Reflexes Rating:</label>
+                                        <input type="number" class="form-control" id="gk_reflexes" name="gk_reflexes" required>
+                                    </div>
+                                    <div class="form-group light-blue">
+                                        <label for="club_name">GK Club Name:</label>
+                                        <input type="text" class="form-control" id="club_name" name="club_name" required>
+                                    </div>
+                                    <div class="form-group green">
+                                        <label for="preffered_foot">Preferred Foot:</label>
+                                        <input type="text" class="form-control" id="preffered_foot" name="preffered_foot" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Submit Button -->
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                        <!-- OPTION TO DISPLAY PERFORMANCE -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+
+    <!-- feature (skew background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
+        <div class="container my-5">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
+                    <h3 class="font-weight-bold">Precision meets performance.<br>Football analysis, redefined </h3>
+                    <p class="my-4">"Track every move, analyze every play, and unlock new strategies.<br>
+                        Harness the power of AI to elevate your team's performance to the next level."</p>
+                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
+                    <img src="data:image/png;base64,{{ plot_url }}" alt="GK Analysis Plot" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- feature (green background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
+        <div class="container">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
+                    <h2 class="font-weight-bold">Performance Categories</h2>
+
+                            <!-- Display performance categories -->
+                            <div class="performance-category">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Category</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Very Low</td>
+                                                <td>Performance below 25%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Low</td>
+                                                <td>Performance between 25% and 50%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Medium</td>
+                                                <td>Performance between 50% and 75%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>High</td>
+                                                <td>Performance above 75%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
+                    
+                    <div class="#">
+                        <div class="card">
+                            <div class="card-header bg-danger text-white">
+                                <h2 class="mb-0">Real Madrid CF Goalkeepers</h2>
+                            </div>
+                            <div class="card-body" style="background-color: lightgreen;">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Player Name</th>
+                                            <th>GK Performance</th>
+                                            <th>Performance Category</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for index, row in real_gk_pass.iterrows() %}
+                                        <tr>
+                                            <td>{{ row['Known As'] }}</td>
+                                            <td>{{ row['GK Performance'] }}</td>
+                                            <td>{{ row['Performance Category'] }}</td>
+                                            <td>{{ row['GK Rating'] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Display the plot 
+                    <img src="data:image/png;base64,{{ plot_url }}" alt="Forward Analysis Plot" class="mx-auto d-block">-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- price table -->
+    <div class="container my-5 py-2" id="price-table">
+        <h2 class="text-center font-weight-bold d-block mb-3">Real Madrid Goalkeepers</h2>
+        
+                <!-- Display goalkeeper data -->
+                <div class="table-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped performance-table">
+                                <thead>
+                                    <tr>
+                                        <th>Player Name</th>
+                                        <th>GK Performance</th>
+                                        <th>Performance Category</th>
+                                        <th>Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in range(10) %}
+                                    <tr>
+                                        <td>{{ gk_pass.iloc[i]['Known As'] }}</td>
+                                        <td>{{ gk_pass.iloc[i]['GK Performance'] }}</td>
+                                        <td>{{ gk_pass.iloc[i]['Performance Category'] }}</td>
+                                        <td>{{ gk_pass.iloc[i]['GK Rating'] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+        </div>
+
+
+
+
+
+    
+        <!-- contact -->
+    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(static/img/contact-bk.jpg);">
+        <div class="container my-5">
+            <div class="row justify-content-between">
+                <div class="col-md-6 text-white">
+                    <h2 class="font-weight-bold">Next-Gen Performance</h2>
+                    <p class="my-4">
+                        Turning data into game-changing decisions.
+                        <br> Master the game with machine learning.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>Email : company_email@com</li>
+                        <li>Phone : 361-688-5824</li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+	<!-- copyright -->
+	<div class="jumbotron jumbotron-fluid" id="copyright">
+        <div class="container">
+            <div class="row justify-content-between">
+            	<div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
+                    Copyright © .
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AOS -->
+    <script src="static/js/aos.js"></script>
+    <script>
+      AOS.init({
+      });
+    </script>
+</body>
+
+</html>
